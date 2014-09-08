@@ -5,21 +5,13 @@ RSpec.describe "Logging in" do
     let(:user) { create(:user) }
 
     it "shows me the dashboard page" do
-      visit signin_path
-  
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_on "Sign in"
+      signin user
 
       expect(page).to have_selector ".user-email", text: user.email
     end
 
     it "shows me a notice message" do
-      visit signin_path
-  
-      fill_in "Email", with: user.email
-      fill_in "Password", with: user.password
-      click_on "Sign in"
+      signin user
 
       expect(page).to have_content "Signed in successfully"
     end
