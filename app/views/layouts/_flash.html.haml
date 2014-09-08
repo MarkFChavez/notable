@@ -1,5 +1,11 @@
 - if notice 
-  = notice
+  .alert-box.success{"data-alert" => ""}
+    = notice
+    = link_to "#", class: "close" do
+      &times;
 
 - if alert
-  = alert
+  .alert-box.alert{"data-alert" => ""}
+    = alert
+    = link_to "#", class: "close" do
+      &times;

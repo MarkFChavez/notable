@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  before_action :check_user
+
   def new
   end
 
@@ -11,5 +13,11 @@ class SessionsController < ApplicationController
     else
       redirect_to signin_url, alert: "Invalid email or password"
     end
+  end
+
+  private
+
+  def check_user
+    redirect_to dashboard_url if current_user
   end
 end

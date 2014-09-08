@@ -9,6 +9,7 @@ group :test do
   gem 'capybara'
 end
 
+gem 'foundation-rails'
 gem 'haml'
 gem 'haml-rails'
 
