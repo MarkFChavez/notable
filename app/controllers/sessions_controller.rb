@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = @user.id
       redirect_to dashboard_url, notice: "Signed in successfully"
     else
-      redirect_to signin_url
+      redirect_to signin_url, alert: "Invalid email or password"
     end
   end
 end
