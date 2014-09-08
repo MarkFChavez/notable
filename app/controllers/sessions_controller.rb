@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
 
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to dashboard_url
+      redirect_to dashboard_url, notice: "Signed in successfully"
     else
       redirect_to signin_url
     end
