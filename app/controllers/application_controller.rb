@@ -20,7 +20,7 @@ class ApplicationController < ActionController::Base
   end
 
   def identify_layout
-    return "authenticated" if current_user
+    return "authenticated/application" if current_user
     return "application"
   end
 end

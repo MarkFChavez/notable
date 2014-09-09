@@ -1,0 +1,19 @@
+%nav.top-bar{ "data-topbar" => "", role: "navigation" }
+  %ul.title-area
+    %li.name
+      %h1
+        = link_to "Notable", "#"
+
+    %li.toggle-topbar.menu-icon
+      = link_to "#" do
+        %span Menu
+  
+  %section.top-bar-section
+    %ul.right
+      %li.has-dropdown
+        = link_to current_user.email, "#", class: "user-email"
+        %ul.dropdown
+          %li
+            = link_to "Profile", "#"
+          %li
+            = link_to  "Logout", signout_path, method: :delete, data: { confirm: "Signout?" }
