@@ -3,6 +3,8 @@ class ApplicationController < ActionController::Base
   # For APIs, you may want to use :null_session instead.
   protect_from_forgery with: :exception
 
+  layout :identify_layout
+
   def current_user
     @user ||= User.find(session[:user_id])
 
@@ -15,5 +17,10 @@ class ApplicationController < ActionController::Base
 
   def authenticate_user
     redirect_to signin_url unless current_user
+  end
+
+  def identify_layout
+    return "authenticated" if current_user
+    return "application"
   end
 end
