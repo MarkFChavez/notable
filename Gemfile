@@ -10,6 +10,7 @@ group :test do
 end
 
 gem 'foundation-rails'
+gem 'gravatar_image_tag'
 gem 'haml'
 gem 'haml-rails'
 

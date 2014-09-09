@@ -11,7 +11,10 @@
   %section.top-bar-section
     %ul.right
       %li.has-dropdown
-        = link_to current_user.email, "#", class: "user-email"
+        = link_to "#", class: "user-email" do
+          = gravatar(current_user.email, size: 32)
+          = current_user.email
+
         %ul.dropdown
           %li
             = link_to "Profile", "#"

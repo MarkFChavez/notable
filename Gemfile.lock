@@ -54,6 +54,7 @@ GEM
     foundation-rails (5.4.3.0)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
+    gravatar_image_tag (1.2.0)
     haml (4.0.5)
       tilt
     haml-rails (0.5.3)
@@ -162,6 +163,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   factory_girl_rails
   foundation-rails
+  gravatar_image_tag
   haml
   haml-rails
   jbuilder (~> 2.0)
