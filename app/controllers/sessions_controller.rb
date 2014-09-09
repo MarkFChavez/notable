@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  before_action :check_user
+  before_action :check_user, except: [:destroy]
 
   def new
   end
@@ -13,6 +13,11 @@ class SessionsController < ApplicationController
     else
       redirect_to signin_url, alert: "Invalid email or password"
     end
+  end
+
+  def destroy
+    session[:user_id] = nil
+    redirect_to signin_url, notice: "Signed out successfully"
   end
 
   private
